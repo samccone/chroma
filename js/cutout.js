@@ -1,12 +1,14 @@
 var frameInterval;
-var frameRate = 24;
-var holder    = document.createElement('canvas');
-var output    = document.createElement('canvas');
-var videoElm  = document.createElement('video');
-var setup     = false;
-var debug     = false;
+var frameRate     = 24;
+var holder        = document.createElement('canvas');
+var output        = document.createElement('canvas');
+var videoElm      = document.createElement('video');
+var setup         = false;
+var debug         = false;
+var defringeDepth = 0;
 
 document.body.appendChild(output);
+
 videoElm.addEventListener('loadedmetadata', metaLoadeds);
 videoElm.src = "video.mp4";
 videoElm.load();
@@ -31,13 +33,28 @@ function placeOntoCanvas() {
 // Takes care of the cutout
 function cleanData(area, cb) {
   for(var i = 0, l = area.data.length; i < l; i += 4) {
-    if(area.data[i + 1] >= 170) {
+    if(area.data[i + 3] != 0 && area.data[i + 1] >= 170) {
       area.data[i+3] = 0;
+      deFringe(area, i, 0);
     }
   }
   cb(area);
 }
 
+
+// Defringes the corners of the key
+function deFringe(area, i, stack) {
+  if (stack < defringeDepth) {
+    var left  = i - 4;
+    var right = i + 4;
+    [(i - 4), (i + 4)].map(function(k) {
+      if (area.data[k + 3] != 0 && area.data[k + 1] > 50 ){
+        area.data[k + 3] = 0;
+        deFringe(area, k, stack+1);
+      }
+    });
+  }
+}
 
 function setupEnv() {
   holder.setAttribute('width', videoElm.videoWidth);
