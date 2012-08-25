@@ -1,0 +1,17 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  background: #000;
+}
+
+#videoElm {
+  display: none;
+}
+
+canvas {
+  display: block;
+  margin: 0px auto;
+}
