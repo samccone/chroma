@@ -5,7 +5,7 @@ var output        = document.createElement('canvas');
 var videoElm      = document.createElement('video');
 var setup         = false;
 var debug         = false;
-var defringeDepth = 0;
+var defringeDepth = 4;
 
 document.body.appendChild(output);
 
