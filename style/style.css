@@ -4,10 +4,18 @@
 }
 
 html {
-  background: #000;
+  -webkit-animation: colorPulse 10s infinite alternate;
 }
 
 canvas, video {
   display: block;
   margin: 0px auto;
+  width: 100%;
+}
+
+
+@-webkit-keyframes colorPulse {
+      0% {background-color: #de4f71;}
+     50% {background-color: #edb800;}
+    100% {background-color: #4f74de;}
 }
