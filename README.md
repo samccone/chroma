@@ -7,7 +7,7 @@ http://0.0.0.0:8000/
 ## current state
 
 8/26
-![](http://i.imgur.com/yNU1m.png)
+![](http://i.imgur.com/jKxFk.png)
 
 8/25
 ![](http://i.imgur.com/M8PQ8.png)
