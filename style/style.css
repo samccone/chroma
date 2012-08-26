@@ -7,10 +7,6 @@ html {
   background: #000;
 }
 
-#videoElm {
-  display: none;
-}
-
 canvas, video {
   display: block;
   margin: 0px auto;

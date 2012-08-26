@@ -8,7 +8,6 @@
   var debug         = false;
 
   document.body.appendChild(output);
-  document.body.appendChild(videoElm);
 
   videoElm.addEventListener('loadedmetadata', metaLoadeds);
   videoElm.src = "video.mp4";
