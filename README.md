@@ -1,3 +1,8 @@
+view it live
+===
+
+http://samccone.github.com/chroma/
+
 ## to run locally
 
 python -m SimpleHTTPServer
