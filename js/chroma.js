@@ -12,7 +12,7 @@ window.chroma = window.chroma || {};
         var index = (height_index * width + width_index) * 4;
         if(area.data[index + 3] != 0 && area.data[index + 1] >= greenValue) {
           area.data[index+3] = 0;
-          deFringe(area, height_index, width_index, width, 0);
+          // deFringe(area, height_index, width_index, width, 0);
         }
       }
     }
